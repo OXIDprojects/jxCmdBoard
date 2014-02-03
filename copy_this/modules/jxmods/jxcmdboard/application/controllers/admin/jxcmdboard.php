@@ -85,6 +85,9 @@ class jxcmdboard extends oxAdminView
         
         $oSmarty->assign("aIncModules",$aIncModules);
         $oSmarty->assign("output",$this->output);
+        $oSmarty->assign("response",$this->response['http_code']);
+        $oSmarty->assign("exectime",$this->exectime);
+        $oSmarty->assign("exectitle",oxConfig::getParameter("jxcmd_title"));
 
         return $this->_sThisTemplate;
     }
@@ -95,7 +98,12 @@ class jxcmdboard extends oxAdminView
         $url = oxConfig::getParameter( "jxcmd_url" );
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        //curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE); 
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE); 
+        $timeStart = time();
         $output = curl_exec($ch);
+        $this->exectime = time() - $timeStart;
+        $this->response = curl_getinfo( $ch );
         curl_close($ch);
         
         $this->output = $output;

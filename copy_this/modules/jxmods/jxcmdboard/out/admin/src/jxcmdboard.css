@@ -1,0 +1,119 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03.02.2014, 20:26:36
+    Author     : jbarthel
+*/
+
+.jxcmdboard {
+    margin-left: 20px; !important
+    margin-right: 20px;
+}
+.jxcmdboard fieldset {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    height: 130px;
+    width: 250px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+.jxcmdboard legend {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    border-top: 2px solid #444;
+    /*border-left: 1px solid #444;
+    border-right: 1px solid #444;*/
+    padding-top: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: bold;
+}
+.desc {
+    height: 84px;
+}
+.jxcmdboard fieldset a {
+    color: #ffffff;
+    background-color: #323232;
+    border-radius: 3px;
+    box-shadow: 2px 2px #aaa;
+    height: 14px;
+    width: 18px;
+    padding-top: -2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.jxcmdboard fieldset a:hover {
+    box-shadow: 2px 2px #aaa;
+    text-decoration: none;
+}
+.jxcmdboard fieldset a:active {
+    background-color: #424242;
+    box-shadow: 1px 1px #aaa;
+    border-top: 1px #fff solid;
+    border-left: 1px #fff solid;
+}
+.jxgrayout {
+    display: none;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #000000;
+    opacity: 0.4;
+    filter:alpha(opacity=40);  
+}
+.jxpopupwin {
+    position: fixed;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    min-height: 65%;
+    height: 250px;
+    padding: 0px;
+    border: 1px solid #fff;
+    z-index: 99;
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 5px 5px 3px #777;
+}
+.jxpopupclose {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    height: 24px;
+    width: 24px;
+    vertical-align: bottom;
+    text-align: center;
+    color: #ffffff;
+    background: #323232;
+    cursor: default;
+    border-radius: 12px;
+}
+.jxpopupcontent {
+    margin:10px;
+    min-height:90%;
+    height:200px;
+    overflow:scroll;
+    border:1px solid gray;
+    background-color:#f0f0f0;
+}
+.jxexecinfo {
+    background-color: #323232;
+    color: #ffffff;
+    display: none;
+    position: fixed;
+    left: 40%;
+    top: 40%;
+    width: 20%;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px #777;
+    text-align: center;
+}
