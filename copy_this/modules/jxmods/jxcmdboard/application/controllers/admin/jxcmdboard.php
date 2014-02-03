@@ -101,7 +101,7 @@ class jxcmdboard extends oxAdminView
         //curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE); 
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE); 
         $timeStart = time();
-        $output = curl_exec($ch);
+        $output = curl_exec($ch).' ';
         $this->exectime = time() - $timeStart;
         $this->response = curl_getinfo( $ch );
         curl_close($ch);
