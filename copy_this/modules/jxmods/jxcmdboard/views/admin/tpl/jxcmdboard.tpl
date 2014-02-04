@@ -6,7 +6,7 @@
   if(top)
   {
     top.sMenuItem    = "[{ oxmultilang ident="mxservice" }]";
-    top.sMenuSubItem = "[{ oxmultilang ident="jxexcptns_menu" }]";
+    top.sMenuSubItem = "[{ oxmultilang ident="jxcmdboard_menu" }]";
     top.sWorkArea    = "[{$_act}]";
     top.setTitle();
   }
@@ -50,7 +50,7 @@
             [{/if}]
             
             <div id="grayout" class="jxgrayout" [{if $output}]style="display:block;"[{else}]style="display:none;"[{/if}]></div>
-            <div id="execinfo" class="jxexecinfo">[{ oxmultilang ident="JXCMDBOARD_EXECUTING" }]</div>
+            <div id="execinfo" class="jxexecinfo">[{ oxmultilang ident="JXCMDBOARD_EXECUTING" }] <img src="[{$oViewConf->getModuleUrl('jxcmdboard','out/admin/src/img/progress.gif')}]"></div>
             
             <form name="jxcmd" id="jxcmd" action="[{ $oViewConf->getSelfLink() }]" method="post">
                 [{ $oViewConf->getHiddenSid() }]

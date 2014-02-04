@@ -25,7 +25,6 @@
 class jxcmdboard extends oxAdminView
 {
     protected $_sThisTemplate = "jxcmdboard.tpl";
-    //public $this->output = "";
             
     public function render()
     {
@@ -40,49 +39,14 @@ class jxcmdboard extends oxAdminView
         $sModuleUrl = $sShopUrl . 'modules/' . $oModule->getModulePath("jxcmdboard") . '/';
         
         $aIncFiles = array();
-        //echo '-'.$myConfig->getConfigParam("sJxCmdBoardIncludeFiles").'-';
         $aIncFiles = explode( ',', $myConfig->getConfigParam("sJxCmdBoardIncludeFiles") );
-        /*echo '<hr><pre>';
-        print_r($aIncFiles);
-        echo '</pre><hr>';*/
         $aIncModules = array();
         $sIncPath = $this->jxGetModulePath() . '/application/controllers/admin/';
         foreach ($aIncFiles as $sIncFile) { 
             $sIncFile = $sIncPath . 'jxcmd_' . $sIncFile . '.inc.php';
             require $sIncFile;
         } 
-        /*echo '<hr><pre>';
-        print_r($aIncModules);
-        echo '</pre><hr>';*/
 
-        //echo '-end-';
-        /*$sLogFile = $sLogsDir . 'EXCEPTION_LOG.txt';
-        if (file_exists($sLogFile)) {
-            $fp = fopen($sLogFile, 'r');
-            $aTemp = array();
-            if ($fp == FALSE)
-                $aContent[0] = 'File EXCEPTION_LOG.txt not found.';
-
-            while (!feof($fp)) 
-                array_push( $aTemp, fgets($fp) );
-            fclose($fp);
-
-            $aContent = array();
-            if (count($aTemp) < 400)
-                $iStart = 0;
-            else
-                $iStart = count($aTemp) - 400;
-
-            $iStop = count($aTemp);
-            for ( $i=$iStart; $i<$iStop; $i++ )
-                array_push ($aContent, $this->keywordHighlighter($aTemp[$i]));
-        }
-        else {
-            $aContent = array();
-        }
-        
-        $oSmarty->assign("aContent",$aContent);*/
-        
         $oSmarty->assign("aIncModules",$aIncModules);
         $oSmarty->assign("output",$this->output);
         $oSmarty->assign("response",$this->response['http_code']);
@@ -98,7 +62,6 @@ class jxcmdboard extends oxAdminView
         $url = oxConfig::getParameter( "jxcmd_url" );
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-        //curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE); 
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE); 
         $timeStart = time();
         $output = curl_exec($ch).' ';
@@ -108,41 +71,6 @@ class jxcmdboard extends oxAdminView
         
         $this->output = $output;
         return;
-    }
-    
-    
-    public function keywordHighlighter( $sText ) 
-    {
-        $sStylePreHeader = '<span style="font-size:1.25em; font-weight:bold;">';
-        $sStylePostHeader = '</span>';
-        $sStylePreError = '<span style="font-weight:bold;color:#dd0000;">';
-        $sStylePostError = '</span>';
-        
-        $aSearch = array(
-            '/(.*)(Faulty component|Connection Error)(.*)/',
-            '/(.*)\\[0]:(.*)/',
-            );
-
-        $aReplace = array(
-            "{$sStylePreHeader}$0{$sStylePostHeader}",
-            "$1[0]: {$sStylePreError}$2{$sStylePostError}",
-            );
-        
-        $sText = preg_replace($aSearch, $aReplace, $sText);
-
-        return $sText;
-    }
-    
-    
-    public function fileDownload()
-    {
-        $myConfig = oxRegistry::get("oxConfig");
-        $sLogsDir = $myConfig->getLogsDir();
-        $sLogFile = 'EXCEPTION_LOG.txt';
-
-        header("Content-Type: application/csv-tab-delimited-table");
-        header("Content-Disposition: attachment; filename=\"$sLogFile\"");
-        readfile($sLogsDir.$sLogFile);
     }
 
     

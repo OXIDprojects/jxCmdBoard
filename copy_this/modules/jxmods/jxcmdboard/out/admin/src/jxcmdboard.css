@@ -9,22 +9,23 @@ and open the template in the editor.
 */
 
 .jxcmdboard {
-    margin-left: 20px; !important
+    margin-left: 20px;
     margin-right: 20px;
 }
 .jxcmdboard fieldset {
     background-color: #f0f0f0;
+    /*border: 1px solid #888;*/
     border-radius: 4px;
     height: 130px;
     width: 250px;
     float: left;
-    margin-right: 20px;
+    margin-right: 40px;
     margin-bottom: 40px;
 }
 .jxcmdboard legend {
     background-color: #f0f0f0;
     border-radius: 10px;
-    border-top: 2px solid #444;
+    border-top: 1px solid #444;
     /*border-left: 1px solid #444;
     border-right: 1px solid #444;*/
     padding-top: 2px;
