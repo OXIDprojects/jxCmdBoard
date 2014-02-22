@@ -37,9 +37,9 @@
             
             [{if $output}]
                 <div id="popupwin" class="jxpopupwin">
-                    <div style="[{if $response == "200"}]background:#008000;[{else}]background:#800000;[{/if}]color:#fff;padding:4px;">
+                    <div style="[{if $response == "200"}]background:#008000;[{else}]background:#800000;[{/if}]color:#fff;padding:4px;border-top-left-radius:3px;">
                         <span style="padding-left:10px;font-size:1.2em;font-weight:bold;">[{$exectitle}]</span> 
-                        <span style="padding-left:40px;">[{ oxmultilang ident="JXCMDBOARD_DURATION" }]: <b>[{$exectime}] sec.</b></span>
+                        <span style="padding-left:40px;">[{ oxmultilang ident="JXCMDBOARD_DURATION" }]: <b>[{$exectime|string_format:"%.1f"}] sec.</b></span>
                         <span style="padding-left:40px;">[{ oxmultilang ident="JXCMDBOARD_RESPONSE" }]: <b>[{if $response == "200"}]OK[{else}]ERROR: [{$response}][{/if}]</b></span>
                     </div>
                     <div class="jxpopupclose" onclick="document.getElementById('popupwin').style.display='none';document.getElementById('grayout').style.display='none';">

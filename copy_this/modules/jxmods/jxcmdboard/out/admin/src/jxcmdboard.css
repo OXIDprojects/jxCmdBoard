@@ -97,6 +97,7 @@ and open the template in the editor.
     background: #323232;
     cursor: default;
     border-radius: 12px;
+    border: 1px solid #ffffff;
 }
 .jxpopupcontent {
     margin:10px;
