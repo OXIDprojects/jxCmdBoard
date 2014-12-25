@@ -16,7 +16,7 @@ $aModule = array(
                         'en'=>'Configurable Command Board'
                         ),
     'thumbnail'    => 'jxcmdboard.png',
-    'version'      => '0.2',
+    'version'      => '0.2.1',
     'author'       => 'Joachim Barthel',
     'url'          => 'https://github.com/job963/jxCmdBoard',
     'email'        => 'jobarthel@gmail.com',
@@ -31,9 +31,10 @@ $aModule = array(
     'settings'     => array(
                         array(
                             'group' => 'JXCMDBOARD_INCLUDEMODULES', 
-                            'name'  => 'sJxCmdBoardIncludeFiles', 
-                            'type'  => 'str', 
-                            'value' => ''
+                            'name'  => 'aJxCmdBoardIncludeFiles', 
+                            'type'  => 'arr', 
+                            'value' => array(), 
+                            'position' => 1
                             )
                         )
     );

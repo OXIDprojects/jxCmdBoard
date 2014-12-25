@@ -47,6 +47,32 @@ class jxcmdboard extends oxAdminView
             require $sIncFile;
         } 
 
+        $oSmarty->assign("aTileColor",array(
+            '#ecac00',
+            '#632F00',
+            '#4617B4',
+            '#77B900',
+            '#7200AC',
+            '#AD103C',
+            '#006AC1',
+            '#008287',
+            '#199900',
+            '#FF981D',
+            '#FF2E12',
+            '#00C13F',
+            '#FF1D77',
+            '#AA40FF',
+            '#B01E00',
+            '#00D8CC',
+            '#91D100',
+            '#E1B700',
+            '#C1004F',
+            '#56C5FF',
+            '#FF76BC',
+            '#00A3A3',
+            '#1FAEFF',
+            '#FE7C22'
+            ));
         $oSmarty->assign("aIncModules",$aIncModules);
         $oSmarty->assign("output",$this->output);
         $oSmarty->assign("response",$this->response['http_code']);

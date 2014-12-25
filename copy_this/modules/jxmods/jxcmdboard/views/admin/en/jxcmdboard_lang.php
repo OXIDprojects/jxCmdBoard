@@ -12,7 +12,7 @@ $aLang = array(
     'JXCMDBOARD_ERROR'        => 'Error',
     
     'SHOP_MODULE_GROUP_JXCMDBOARD_INCLUDEMODULES'   => 'Module Integration',
-    'SHOP_MODULE_sJxCmdBoardIncludeFiles'           => 'Definition of module keys (Example: jxcmd_KEYLABEL.inc.php)',
+    'SHOP_MODULE_aJxCmdBoardIncludeFiles'           => 'Definition of module keys (Example: jxcmd_KEYLABEL.inc.php)',
     
     'charset'                 => 'ISO-8859-15',
 );

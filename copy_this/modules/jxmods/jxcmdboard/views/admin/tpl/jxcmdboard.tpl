@@ -1,6 +1,17 @@
 [{*debug*}]
 [{include file="headitem.tpl" title="GENERAL_ADMIN_TITLE"|oxmultilangassign box=" "}]
-<link href="[{$oViewConf->getModuleUrl('jxcmdboard','out/admin/src/jxcmdboard.css')}]" type="text/css" rel="stylesheet">
+
+[{assign var="cssFilePath" value=$oViewConf->getModulePath('oxprobs','out/admin/src/jxcmdboard.css') }]
+[{php}] 
+    $sCssFilePath = $this->get_template_vars('cssFilePath');;
+    $sCssTime = filemtime( $sCssFilePath );
+    $this->assign('cssTime', $sCssTime);
+[{/php}]
+[{assign var="cssFileUrl" value=$oViewConf->getModuleUrl('jxcmdboard','out/admin/src/jxcmdboard.css') }]
+[{assign var="cssFileUrl" value="$cssFileUrl?$cssTime" }]
+<link href="[{$cssFileUrl}]" type="text/css" rel="stylesheet">
+
+[{*<link href="[{$oViewConf->getModuleUrl('jxcmdboard','out/admin/src/jxcmdboard.css')}]" type="text/css" rel="stylesheet">*}]
 
 <script type="text/javascript">
   if(top)
@@ -60,9 +71,16 @@
                 <input type="hidden" name="editval[oxuser__oxid]" value="[{ $oxid }]">
                 <input type="hidden" name="jxcmd_url" value="">
                 <input type="hidden" name="jxcmd_title" value="">
+                [{assign var="i" value=-1}]
                 [{foreach name=incmods item=aIncModule from=$aIncModules}]
-                    <fieldset>
-                        <legend>[{ $aIncModule.title[$IsoLang] }]</legend>
+                    [{assign var="i" value=$i+1}]
+                    <fieldset style="background-color:[{ $aTileColor[$i] }];">
+                        [{*<legend>
+                                [{ $aIncModule.title[$IsoLang] }]
+                        </legend>*}]
+                        <div class="title">
+                            [{ $aIncModule.title[$IsoLang] }]
+                        </div>
                         <div class="desc">[{ $aIncModule.desc[$IsoLang] }]</div>
                         [{*<div style="height:12px;"> </div>*}]
                         [{*
