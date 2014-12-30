@@ -57,13 +57,13 @@ and open the template in the editor.
     padding-left: 4px;
     padding-right: 4px;
 }
-.jxcmdboard fieldset a:hover {
-    box-shadow: 2px 2px #aaa;
+.jxcmdboard fieldset:hover {
+    box-shadow: 1px 1px #aaa;
     text-decoration: none;
 }
-.jxcmdboard fieldset a:active {
+.jxcmdboard fieldset:active {
     background-color: #424242;
-    box-shadow: 1px 1px #aaa;
+    box-shadow:  -1px -1px 1px #aaa;
     border-top: 1px #fff solid;
     border-left: 1px #fff solid;
 }
@@ -128,6 +128,7 @@ and open the template in the editor.
     border-radius: 3px;
     box-shadow: 3px 3px 5px #777;
     text-align: center;
+    z-index: 49;
     padding-top: 4px;
     padding-bottom: 4px;
 }
@@ -135,3 +136,479 @@ and open the template in the editor.
 .bgcol1 fieldset  {
     background-color: #F3B200;
 }
+
+.btn-custom-metro1.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+pre {
+    word-wrap: normal;
+    height: 500px;
+    overflow: scroll;
+}
+
+.btn-metro1 {
+  background-color: #ecac00;
+  border-color: #ecac00;
+  color: #ffffff;
+}
+.btn-metro1:hover,
+.btn-metro1:focus,
+.btn-metro1:active,
+.btn-metro1.active {
+  background-color: #d39900;
+  border-color: #b98700;
+  color: #ffffff;
+}
+.btn-metro1.disabled:hover,
+.btn-metro1.disabled:focus,
+.btn-metro1.disabled:active,
+.btn-metro1.disabled.active,
+.btn-metro1[disabled]:hover,
+.btn-metro1[disabled]:focus,
+.btn-metro1[disabled]:active,
+.btn-metro1[disabled].active,
+fieldset[disabled] .btn-metro1:hover,
+fieldset[disabled] .btn-metro1:focus,
+fieldset[disabled] .btn-metro1:active,
+fieldset[disabled] .btn-metro1.active {
+  background-color: #ecac00;
+  border-color: #ecac00;
+}
+
+.btn-metro2 {
+  background-color: #632F00;
+  border-color: #632F00;
+  color: #ffffff;
+}
+.btn-metro2:hover,
+.btn-metro2:focus,
+.btn-metro2:active,
+.btn-metro2.active {
+  background-color: #4a2300;
+  border-color: #301700;
+  color: #ffffff;
+}
+.btn-metro2.disabled:hover,
+.btn-metro2.disabled:focus,
+.btn-metro2.disabled:active,
+.btn-metro2.disabled.active,
+.btn-metro2[disabled]:hover,
+.btn-metro2[disabled]:focus,
+.btn-metro2[disabled]:active,
+.btn-metro2[disabled].active,
+fieldset[disabled] .btn-metro2:hover,
+fieldset[disabled] .btn-metro2:focus,
+fieldset[disabled] .btn-metro2:active,
+fieldset[disabled] .btn-metro2.active {
+  background-color: #632F00;
+  border-color: #632F00;
+}
+
+.btn-metro3 {
+  background-color: #4617b4;
+  border-color: #4617b4;
+  color: #ffffff;
+}
+.btn-metro3:hover,
+.btn-metro3:focus,
+.btn-metro3:active,
+.btn-metro3.active {
+  background-color: #3d149d;
+  border-color: #341187;
+  color: #ffffff;
+}
+.btn-metro3.disabled:hover,
+.btn-metro3.disabled:focus,
+.btn-metro3.disabled:active,
+.btn-metro3.disabled.active,
+.btn-metro3[disabled]:hover,
+.btn-metro3[disabled]:focus,
+.btn-metro3[disabled]:active,
+.btn-metro3[disabled].active,
+fieldset[disabled] .btn-metro3:hover,
+fieldset[disabled] .btn-metro3:focus,
+fieldset[disabled] .btn-metro3:active,
+fieldset[disabled] .btn-metro3.active {
+  background-color: #4617b4;
+  border-color: #4617b4;
+}
+
+.btn-metro4 {
+  background-color: #91d100;
+  border-color: #91d100;
+  color: #ffffff;
+}
+.btn-metro4:hover,
+.btn-metro4:focus,
+.btn-metro4:active,
+.btn-metro4.active {
+  background-color: #7fb800;
+  border-color: #6e9e00;
+  color: #ffffff;
+}
+.btn-metro4.disabled:hover,
+.btn-metro4.disabled:focus,
+.btn-metro4.disabled:active,
+.btn-metro4.disabled.active,
+.btn-metro4[disabled]:hover,
+.btn-metro4[disabled]:focus,
+.btn-metro4[disabled]:active,
+.btn-metro4[disabled].active,
+fieldset[disabled] .btn-metro4:hover,
+fieldset[disabled] .btn-metro4:focus,
+fieldset[disabled] .btn-metro4:active,
+fieldset[disabled] .btn-metro4.active {
+  background-color: #91d100;
+  border-color: #91d100;
+}
+
+.btn-metro5 {
+  background-color: #aa40ff;
+  border-color: #aa40ff;
+  color: #ffffff;
+}
+.btn-metro5:hover,
+.btn-metro5:focus,
+.btn-metro5:active,
+.btn-metro5.active {
+  background-color: #9f27ff;
+  border-color: #930dff;
+  color: #ffffff;
+}
+.btn-metro5.disabled:hover,
+.btn-metro5.disabled:focus,
+.btn-metro5.disabled:active,
+.btn-metro5.disabled.active,
+.btn-metro5[disabled]:hover,
+.btn-metro5[disabled]:focus,
+.btn-metro5[disabled]:active,
+.btn-metro5[disabled].active,
+fieldset[disabled] .btn-metro5:hover,
+fieldset[disabled] .btn-metro5:focus,
+fieldset[disabled] .btn-metro5:active,
+fieldset[disabled] .btn-metro5.active {
+  background-color: #aa40ff;
+  border-color: #aa40ff;
+}
+
+.btn-metro6 {
+  background-color: #fe7c22;
+  border-color: #fe7c22;
+  color: #ffffff;
+}
+.btn-metro6:hover,
+.btn-metro6:focus,
+.btn-metro6:active,
+.btn-metro6.active {
+  background-color: #fe6d09;
+  border-color: #ec6101;
+  color: #ffffff;
+}
+.btn-metro6.disabled:hover,
+.btn-metro6.disabled:focus,
+.btn-metro6.disabled:active,
+.btn-metro6.disabled.active,
+.btn-metro6[disabled]:hover,
+.btn-metro6[disabled]:focus,
+.btn-metro6[disabled]:active,
+.btn-metro6[disabled].active,
+fieldset[disabled] .btn-metro6:hover,
+fieldset[disabled] .btn-metro6:focus,
+fieldset[disabled] .btn-metro6:active,
+fieldset[disabled] .btn-metro6.active {
+  background-color: #fe7c22;
+  border-color: #fe7c22;
+}
+
+.btn-metro7 {
+  background-color: #b01e00;
+  border-color: #b01e00;
+  color: #ffffff;
+}
+.btn-metro7:hover,
+.btn-metro7:focus,
+.btn-metro7:active,
+.btn-metro7.active {
+  background-color: #971a00;
+  border-color: #7d1500;
+  color: #ffffff;
+}
+.btn-metro7.disabled:hover,
+.btn-metro7.disabled:focus,
+.btn-metro7.disabled:active,
+.btn-metro7.disabled.active,
+.btn-metro7[disabled]:hover,
+.btn-metro7[disabled]:focus,
+.btn-metro7[disabled]:active,
+.btn-metro7[disabled].active,
+fieldset[disabled] .btn-metro7:hover,
+fieldset[disabled] .btn-metro7:focus,
+fieldset[disabled] .btn-metro7:active,
+fieldset[disabled] .btn-metro7.active {
+  background-color: #b01e00;
+  border-color: #b01e00;
+}
+
+.btn-metro8 {
+  background-color: #006ac1;
+  border-color: #006ac1;
+  color: #ffffff;
+}
+.btn-metro8:hover,
+.btn-metro8:focus,
+.btn-metro8:active,
+.btn-metro8.active {
+  background-color: #005ca8;
+  border-color: #004e8e;
+  color: #ffffff;
+}
+.btn-metro8.disabled:hover,
+.btn-metro8.disabled:focus,
+.btn-metro8.disabled:active,
+.btn-metro8.disabled.active,
+.btn-metro8[disabled]:hover,
+.btn-metro8[disabled]:focus,
+.btn-metro8[disabled]:active,
+.btn-metro8[disabled].active,
+fieldset[disabled] .btn-metro8:hover,
+fieldset[disabled] .btn-metro8:focus,
+fieldset[disabled] .btn-metro8:active,
+fieldset[disabled] .btn-metro8.active {
+  background-color: #006ac1;
+  border-color: #006ac1;
+}
+
+.btn-metro9 {
+  background-color: #00c13f;
+  border-color: #00c13f;
+  color: #ffffff;
+}
+.btn-metro9:hover,
+.btn-metro9:focus,
+.btn-metro9:active,
+.btn-metro9.active {
+  background-color: #00a837;
+  border-color: #008e2e;
+  color: #ffffff;
+}
+.btn-metro9.disabled:hover,
+.btn-metro9.disabled:focus,
+.btn-metro9.disabled:active,
+.btn-metro9.disabled.active,
+.btn-metro9[disabled]:hover,
+.btn-metro9[disabled]:focus,
+.btn-metro9[disabled]:active,
+.btn-metro9[disabled].active,
+fieldset[disabled] .btn-metro9:hover,
+fieldset[disabled] .btn-metro9:focus,
+fieldset[disabled] .btn-metro9:active,
+fieldset[disabled] .btn-metro9.active {
+  background-color: #00c13f;
+  border-color: #00c13f;
+  color: #ffffff;
+}
+
+.btn-metro10 {
+  background-color: #ffb700;
+  border-color: #ffb700;
+  color: #ffffff;
+}
+.btn-metro10:hover,
+.btn-metro10:focus,
+.btn-metro10:active,
+.btn-metro10.active {
+  background-color: #e6a500;
+  border-color: #cc9200;
+  color: #ffffff;
+}
+.btn-metro10.disabled:hover,
+.btn-metro10.disabled:focus,
+.btn-metro10.disabled:active,
+.btn-metro10.disabled.active,
+.btn-metro10[disabled]:hover,
+.btn-metro10[disabled]:focus,
+.btn-metro10[disabled]:active,
+.btn-metro10[disabled].active,
+fieldset[disabled] .btn-metro10:hover,
+fieldset[disabled] .btn-metro10:focus,
+fieldset[disabled] .btn-metro10:active,
+fieldset[disabled] .btn-metro10.active {
+  background-color: #ffb700;
+  border-color: #ffb700;
+}
+
+.btn-metro11 {
+  background-color: #1faeff;
+  border-color: #1faeff;
+  color: #ffffff;
+}
+.btn-metro11:hover,
+.btn-metro11:focus,
+.btn-metro11:active,
+.btn-metro11.active {
+  background-color: #05a5ff;
+  border-color: #0096eb;
+  color: #ffffff;
+}
+.btn-metro11.disabled:hover,
+.btn-metro11.disabled:focus,
+.btn-metro11.disabled:active,
+.btn-metro11.disabled.active,
+.btn-metro11[disabled]:hover,
+.btn-metro11[disabled]:focus,
+.btn-metro11[disabled]:active,
+.btn-metro11[disabled].active,
+fieldset[disabled] .btn-metro11:hover,
+fieldset[disabled] .btn-metro11:focus,
+fieldset[disabled] .btn-metro11:active,
+fieldset[disabled] .btn-metro11.active {
+  background-color: #1faeff;
+  border-color: #1faeff;
+}
+
+.btn-metro12 {
+  background-color: #c1004f;
+  border-color: #c1004f;
+  color: #ffffff;
+}
+.btn-metro12:hover,
+.btn-metro12:focus,
+.btn-metro12:active,
+.btn-metro12.active {
+  background-color: #a80045;
+  border-color: #8e003a;
+  color: #ffffff;
+}
+.btn-metro12.disabled:hover,
+.btn-metro12.disabled:focus,
+.btn-metro12.disabled:active,
+.btn-metro12.disabled.active,
+.btn-metro12[disabled]:hover,
+.btn-metro12[disabled]:focus,
+.btn-metro12[disabled]:active,
+.btn-metro12[disabled].active,
+fieldset[disabled] .btn-metro12:hover,
+fieldset[disabled] .btn-metro12:focus,
+fieldset[disabled] .btn-metro12:active,
+fieldset[disabled] .btn-metro12.active {
+  background-color: #c1004f;
+  border-color: #c1004f;
+}
+
+.btn-metro13 {
+  background-color: #008287;
+  border-color: #008287;
+  color: #ffffff;
+}
+.btn-metro13:hover,
+.btn-metro13:focus,
+.btn-metro13:active,
+.btn-metro13.active {
+  background-color: #00696e;
+  border-color: #005154;
+  color: #ffffff;
+}
+.btn-metro13.disabled:hover,
+.btn-metro13.disabled:focus,
+.btn-metro13.disabled:active,
+.btn-metro13.disabled.active,
+.btn-metro13[disabled]:hover,
+.btn-metro13[disabled]:focus,
+.btn-metro13[disabled]:active,
+.btn-metro13[disabled].active,
+fieldset[disabled] .btn-metro13:hover,
+fieldset[disabled] .btn-metro13:focus,
+fieldset[disabled] .btn-metro13:active,
+fieldset[disabled] .btn-metro13.active {
+  background-color: #008287;
+  border-color: #008287;
+}
+
+.btn-metro14 {
+  background-color: #7200ac;
+  border-color: #7200ac;
+  color: #ffffff;
+}
+.btn-metro14:hover,
+.btn-metro14:focus,
+.btn-metro14:active,
+.btn-metro14.active {
+  background-color: #610093;
+  border-color: #500079;
+  color: #ffffff;
+}
+.btn-metro14.disabled:hover,
+.btn-metro14.disabled:focus,
+.btn-metro14.disabled:active,
+.btn-metro14.disabled.active,
+.btn-metro14[disabled]:hover,
+.btn-metro14[disabled]:focus,
+.btn-metro14[disabled]:active,
+.btn-metro14[disabled].active,
+fieldset[disabled] .btn-metro14:hover,
+fieldset[disabled] .btn-metro14:focus,
+fieldset[disabled] .btn-metro14:active,
+fieldset[disabled] .btn-metro14.active {
+  background-color: #7200ac;
+  border-color: #7200ac;
+}
+
+.btn-metro15 {
+  background-color: #199900;
+  border-color: #199900;
+  color: #ffffff;
+}
+.btn-metro15:hover,
+.btn-metro15:focus,
+.btn-metro15:active,
+.btn-metro15.active {
+  background-color: #158000;
+  border-color: #116600;
+  color: #ffffff;
+}
+.btn-metro15.disabled:hover,
+.btn-metro15.disabled:focus,
+.btn-metro15.disabled:active,
+.btn-metro15.disabled.active,
+.btn-metro15[disabled]:hover,
+.btn-metro15[disabled]:focus,
+.btn-metro15[disabled]:active,
+.btn-metro15[disabled].active,
+fieldset[disabled] .btn-metro15:hover,
+fieldset[disabled] .btn-metro15:focus,
+fieldset[disabled] .btn-metro15:active,
+fieldset[disabled] .btn-metro15.active {
+  background-color: #199900;
+  border-color: #199900;
+}
+
+.btn-metro16 {
+  background-color: #00d8cc;
+  border-color: #00d8cc;
+  color: #ffffff;
+}
+.btn-metro16:hover,
+.btn-metro16:focus,
+.btn-metro16:active,
+.btn-metro16.active {
+  background-color: #00bfb4;
+  border-color: #00a59c;
+  color: #ffffff;
+}
+.btn-metro16.disabled:hover,
+.btn-metro16.disabled:focus,
+.btn-metro16.disabled:active,
+.btn-metro16.disabled.active,
+.btn-metro16[disabled]:hover,
+.btn-metro16[disabled]:focus,
+.btn-metro16[disabled]:active,
+.btn-metro16[disabled].active,
+fieldset[disabled] .btn-metro16:hover,
+fieldset[disabled] .btn-metro16:focus,
+fieldset[disabled] .btn-metro16:active,
+fieldset[disabled] .btn-metro16.active {
+  background-color: #00d8cc;
+  border-color: #00d8cc;
+}
+

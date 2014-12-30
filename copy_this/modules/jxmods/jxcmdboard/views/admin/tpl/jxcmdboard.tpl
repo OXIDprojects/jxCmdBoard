@@ -1,7 +1,21 @@
 [{*debug*}]
 [{include file="headitem.tpl" title="GENERAL_ADMIN_TITLE"|oxmultilangassign box=" "}]
 
-[{assign var="cssFilePath" value=$oViewConf->getModulePath('oxprobs','out/admin/src/jxcmdboard.css') }]
+
+<!-- compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+        
+[{assign var="cssFilePath" value=$oViewConf->getModulePath('jxcmdboard','out/admin/src/jxcmdboard.css') }]
 [{php}] 
     $sCssFilePath = $this->get_template_vars('cssFilePath');;
     $sCssTime = filemtime( $sCssFilePath );
@@ -10,8 +24,6 @@
 [{assign var="cssFileUrl" value=$oViewConf->getModuleUrl('jxcmdboard','out/admin/src/jxcmdboard.css') }]
 [{assign var="cssFileUrl" value="$cssFileUrl?$cssTime" }]
 <link href="[{$cssFileUrl}]" type="text/css" rel="stylesheet">
-
-[{*<link href="[{$oViewConf->getModuleUrl('jxcmdboard','out/admin/src/jxcmdboard.css')}]" type="text/css" rel="stylesheet">*}]
 
 <script type="text/javascript">
   if(top)
@@ -35,7 +47,7 @@
 
 <body onresize="resizeCodeFrame();">
 <div class="center" style="height:100%;">
-    <h1>[{ oxmultilang ident="JXCMDBOARD_TITLE" }]</h1>
+    <h1 style="margin-left:10px;">[{ oxmultilang ident="JXCMDBOARD_TITLE" }]</h1>
     <p>
         <form name="transfer" id="transfer" action="[{ $shop->selflink }]" method="post">
             [{ $shop->hiddensid }]
@@ -46,21 +58,6 @@
         
         <div class="jxcmdboard">
             
-            [{if $output}]
-                <div id="popupwin" class="jxpopupwin">
-                    <div style="[{if $response == "200"}]background:#008000;[{else}]background:#800000;[{/if}]color:#fff;padding:4px;border-top-left-radius:3px;">
-                        <span style="padding-left:10px;font-size:1.2em;font-weight:bold;">[{$exectitle}]</span> 
-                        <span style="padding-left:40px;">[{ oxmultilang ident="JXCMDBOARD_DURATION" }]: <b>[{$exectime|string_format:"%.1f"}] sec.</b></span>
-                        <span style="padding-left:40px;">[{ oxmultilang ident="JXCMDBOARD_RESPONSE" }]: <b>[{if $response == "200"}]OK[{else}]ERROR: [{$response}][{/if}]</b></span>
-                    </div>
-                    <div class="jxpopupclose" onclick="document.getElementById('popupwin').style.display='none';document.getElementById('grayout').style.display='none';">
-                        <div style="height:3px;"></div>
-                        <b>X</b></div>
-                    <div class="jxpopupcontent">[{ $output }]</div>
-                </div>
-            [{/if}]
-            
-            <div id="grayout" class="jxgrayout" [{if $output}]style="display:block;"[{else}]style="display:none;"[{/if}]></div>
             <div id="execinfo" class="jxexecinfo">[{ oxmultilang ident="JXCMDBOARD_EXECUTING" }] <img src="[{$oViewConf->getModuleUrl('jxcmdboard','out/admin/src/img/progress.gif')}]"></div>
             
             <form name="jxcmd" id="jxcmd" action="[{ $oViewConf->getSelfLink() }]" method="post">
@@ -71,27 +68,33 @@
                 <input type="hidden" name="editval[oxuser__oxid]" value="[{ $oxid }]">
                 <input type="hidden" name="jxcmd_url" value="">
                 <input type="hidden" name="jxcmd_title" value="">
-                [{assign var="i" value=-1}]
-                [{foreach name=incmods item=aIncModule from=$aIncModules}]
-                    [{assign var="i" value=$i+1}]
-                    <fieldset style="background-color:[{ $aTileColor[$i] }];">
-                        [{*<legend>
-                                [{ $aIncModule.title[$IsoLang] }]
-                        </legend>*}]
-                        <div class="title">
-                            [{ $aIncModule.title[$IsoLang] }]
-                        </div>
-                        <div class="desc">[{ $aIncModule.desc[$IsoLang] }]</div>
-                        [{*<div style="height:12px;"> </div>*}]
-                        [{*
-                        <a href="[{ $aIncModule.link[$IsoLang] }]" target="[{ $aIncModule.target }]" onClick="Javascript:document.jxcmd.jxcmd_url.value='[{ $aIncModule.link[$IsoLang] }]';document.jxcmd.fnc.value='execute';">[{ $aIncModule.button[$IsoLang] }]</a>
-                        *}]
-                        <input type="submit" class="edittext" name="save" value=" [{ $aIncModule.button[$IsoLang] }] " onClick="Javascript:document.getElementById('execinfo').style.display='block';document.jxcmd.jxcmd_title.value='[{ $aIncModule.title[$IsoLang] }]';document.jxcmd.jxcmd_url.value='[{ $aIncModule.link[$IsoLang] }]';document.jxcmd.fnc.value='execute';" [{ $readonly }]>
-                    </fieldset>
-                [{/foreach}]
             </form>
         </div>
     </p>
+
+    <br clear="all" />
+    
+    [{assign var="tplIncFile" value=$oViewConf->getModulePath('jxcmdboard','views/admin/tpl/jxcmdboard_response.tpl') }]
+    [{include file=$tplIncFile}]
+    
+    <div class="container-fluid">
+        <div class="row">
+            [{assign var="i" value=1}]
+            [{foreach name=incmods item=aIncModule from=$aIncModules}]
+                <div class="col-md-3" style="margin-bottom:16px;">
+                <button type="button" class="btn btn-metro[{$i}] btn-lg" data-toggle="modal" style="width:100%;"
+                         onClick="Javascript:document.getElementById('execinfo').style.display='block';document.jxcmd.jxcmd_title.value='[{ $aIncModule.title[$IsoLang] }]';document.jxcmd.jxcmd_url.value='[{ $aIncModule.link[$IsoLang] }]';document.jxcmd.fnc.value='execute';document.jxcmd.submit();">
+                    [{ $aIncModule.title[$IsoLang] }]
+                    <div style="font-size:0.7em;white-space:normal;">
+                        [{ $aIncModule.desc[$IsoLang] }]
+                    </div>
+                </button>
+                </div>
+                [{assign var="i" value=$i+1}]
+            [{/foreach}]
+        </div>
+    </div>
+
     <div style="position:absolute; bottom:0px; left:0px; height:50px; background-color:#dd0000;"></div>
 
 </div>

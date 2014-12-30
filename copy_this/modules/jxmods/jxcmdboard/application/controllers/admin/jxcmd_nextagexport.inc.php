@@ -26,14 +26,14 @@
  *    This include file creates a tile for Marmalade's csvexporter guenstiger module
  */
  
-array_push( $aIncModules, array("title"  => array('de' => 'Guenstiger/Nextag Export',
-                                                  'en' => 'Guenstiger/Nextag Export'), 
+array_push( $aIncModules, array("title"  => array('de' => 'Nextag Export',
+                                                  'en' => 'Nextag Export'), 
                                 "button" => array('de' => 'CSV Datei erzeugen',
                                                   'en' => 'Create CSV File'),
                                 "desc"   => array('de' => 'Export aller als aktiv geschalteter Artikel. Der Export wird im Verzeichnis /export in der Datei gtex-nnnn.txt gespeichert.',
-                                                  'en' => 'Export of all  active products. The export will be save in the folder /export in file gtex-nnnn.txt.'),
-                                "link"   => array('de' => "{$sShopUrl}modules/marm/csvexporter/exporter/guenstiger/guenstigerExporter.php",
-                                                  'en' => "{$sShopUrl}modules/marm/csvexporter/exporter/guenstiger/guenstigerExporter.php"),
+                                                  'en' => 'Export of all  active products. The export will be save in the folder /export in file ntex-nnnn.txt.'),
+                                "link"   => array('de' => "{$sShopUrl}modules/marm/csvexporter/exporter/nextag/nextagExporter.php",
+                                                  'en' => "{$sShopUrl}modules/marm/csvexporter/exporter/nextag/nextagExporter.php"),
                                 "target" => '_blank'
                                 ));
 

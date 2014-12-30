@@ -26,8 +26,8 @@
  *    This include file creates a tile for Marmalade's csvexporter guenstiger module
  */
  
-array_push( $aIncModules, array("title"  => array('de' => 'Google Productfeed Export',
-                                                  'en' => 'Google Productfeed Export'), 
+array_push( $aIncModules, array("title"  => array('de' => 'Google Export',
+                                                  'en' => 'Google Export'), 
                                 "button" => array('de' => 'Productfeed erzeugen',
                                                   'en' => 'Create Productfeed'),
                                 "desc"   => array('de' => 'Export aller als aktiv geschalteter Artikel. Der Export wird im Verzeichnis /export in der Datei ggex-nnnn.txt gespeichert.',

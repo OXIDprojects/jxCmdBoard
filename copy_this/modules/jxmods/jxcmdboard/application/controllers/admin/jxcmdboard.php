@@ -1,14 +1,14 @@
 <?php
 
 /*
- *    This file is part of the module jxExcptns for OXID eShop Community Edition.
+ *    This file is part of the module jxCmdBoard for OXID eShop Community Edition.
  *
- *    The module OxProbs for OXID eShop Community Edition is free software: you can redistribute it and/or modify
+ *    The module jxCmdBoard for OXID eShop Community Edition is free software: you can redistribute it and/or modify
  *    it under the terms of the GNU General Public License as published by
  *    the Free Software Foundation, either version 3 of the License, or
  *    (at your option) any later version.
  *
- *    The module OxProbs for OXID eShop Community Edition is distributed in the hope that it will be useful,
+ *    The module jxCmdBoard for OXID eShop Community Edition is distributed in the hope that it will be useful,
  *    but WITHOUT ANY WARRANTY; without even the implied warranty of
  *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *    GNU General Public License for more details.
@@ -16,9 +16,9 @@
  *    You should have received a copy of the GNU General Public License
  *    along with OXID eShop Community Edition.  If not, see <http://www.gnu.org/licenses/>.
  *
- * @link      https://github.com/job963/jxExcptns
+ * @link      https://github.com/job963/jxCmdBoard
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
- * @copyright (C) Joachim Barthel 2012-2013
+ * @copyright (C) Joachim Barthel 2013-2014
  *
  */
  
@@ -38,8 +38,7 @@ class jxcmdboard extends oxAdminView
         $oModule = oxNew('oxModule');
         $sModuleUrl = $sShopUrl . 'modules/' . $oModule->getModulePath("jxcmdboard") . '/';
         
-        $aIncFiles = array();
-        $aIncFiles = explode( ',', $myConfig->getConfigParam("sJxCmdBoardIncludeFiles") );
+        $aIncFiles = $myConfig->getConfigParam("aJxCmdBoardIncludeFiles");
         $aIncModules = array();
         $sIncPath = $this->jxGetModulePath() . '/application/controllers/admin/';
         foreach ($aIncFiles as $sIncFile) { 
@@ -47,32 +46,6 @@ class jxcmdboard extends oxAdminView
             require $sIncFile;
         } 
 
-        $oSmarty->assign("aTileColor",array(
-            '#ecac00',
-            '#632F00',
-            '#4617B4',
-            '#77B900',
-            '#7200AC',
-            '#AD103C',
-            '#006AC1',
-            '#008287',
-            '#199900',
-            '#FF981D',
-            '#FF2E12',
-            '#00C13F',
-            '#FF1D77',
-            '#AA40FF',
-            '#B01E00',
-            '#00D8CC',
-            '#91D100',
-            '#E1B700',
-            '#C1004F',
-            '#56C5FF',
-            '#FF76BC',
-            '#00A3A3',
-            '#1FAEFF',
-            '#FE7C22'
-            ));
         $oSmarty->assign("aIncModules",$aIncModules);
         $oSmarty->assign("output",$this->output);
         $oSmarty->assign("response",$this->response['http_code']);
