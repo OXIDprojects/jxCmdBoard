@@ -3,10 +3,10 @@
 *Module for backend / admin of OXID eShops for displaying commands as tiles on a board.*
 
 ## Installation and Setup
-1. Copy all files under **copy_this** to the rott folder of your shop.
+1. Copy all files under **copy_this** to the root folder of your shop.
 2. In the shop admin goto settings/modules and activate **jxCmdBoard**
 3. Switch to the tab **Settings** and expand the section **Module Integration**
-4. Enter all submodules you want to enable/use by typing their key, separated by a comma. Eg. "jxservertime"\\
+4. Enter all submodules you want to enable/use by typing their key, each module in a new line. Eg. "jxservertime"  
 ![Settings](https://github.com/job963/jxCmdBoard/raw/master/docs/img/setup-de-r.png)
 5. The module has now its own menu item under **Service**
 
