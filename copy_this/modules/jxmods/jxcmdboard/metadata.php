@@ -16,7 +16,7 @@ $aModule = array(
                         'en'=>'Configurable Command Board'
                         ),
     'thumbnail'    => 'jxcmdboard.png',
-    'version'      => '0.2.1',
+    'version'      => '0.3',
     'author'       => 'Joachim Barthel',
     'url'          => 'https://github.com/job963/jxCmdBoard',
     'email'        => 'jobarthel@gmail.com',
@@ -26,7 +26,7 @@ $aModule = array(
         'jxcmdboard'     => 'jxmods/jxcmdboard/application/controllers/admin/jxcmdboard.php'
                         ),
     'templates'    => array(
-        'jxcmdboard.tpl' => 'jxmods/jxcmdboard/views/admin/tpl/jxcmdboard.tpl'
+        'jxcmdboard.tpl' => 'jxmods/jxcmdboard/application/views/admin/tpl/jxcmdboard.tpl'
                         ),
     'settings'     => array(
                         array(

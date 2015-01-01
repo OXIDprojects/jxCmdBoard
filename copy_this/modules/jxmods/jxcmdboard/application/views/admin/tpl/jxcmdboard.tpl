@@ -40,11 +40,6 @@
     }
 </script>
 
-[{php}] 
-    $sIsoLang = oxLang::getInstance()->getLanguageAbbr(); 
-    $this->assign('IsoLang', $sIsoLang);
-[{/php}]
-
 <body onresize="resizeCodeFrame();">
 <div class="center" style="height:100%;">
     <h1 style="margin-left:10px;">[{ oxmultilang ident="JXCMDBOARD_TITLE" }]</h1>
@@ -74,19 +69,19 @@
 
     <br clear="all" />
     
-    [{assign var="tplIncFile" value=$oViewConf->getModulePath('jxcmdboard','views/admin/tpl/jxcmdboard_response.tpl') }]
+    [{assign var="tplIncFile" value=$oViewConf->getModulePath('jxcmdboard','application/views/admin/tpl/jxcmdboard_response.tpl') }]
     [{include file=$tplIncFile}]
     
-    <div class="container-fluid">
+    <div class="container-fluid container-lg-height">
         <div class="row">
             [{assign var="i" value=1}]
             [{foreach name=incmods item=aIncModule from=$aIncModules}]
-                <div class="col-md-3" style="margin-bottom:16px;">
-                <button type="button" class="btn btn-metro[{$i}] btn-lg" data-toggle="modal" style="width:100%;"
-                         onClick="Javascript:document.getElementById('execinfo').style.display='block';document.jxcmd.jxcmd_title.value='[{ $aIncModule.title[$IsoLang] }]';document.jxcmd.jxcmd_url.value='[{ $aIncModule.link[$IsoLang] }]';document.jxcmd.fnc.value='execute';document.jxcmd.submit();">
-                    [{ $aIncModule.title[$IsoLang] }]
+                <div class="col-md-3 col-lg-height" style="margin-bottom:16px;">
+                <button type="button" class="btn btn-metro[{$i}] btn-lg btn-block" data-toggle="modal"
+                         onClick="Javascript:document.getElementById('execinfo').style.display='block';document.jxcmd.jxcmd_title.value='[{ $aIncModule.title[$sIsoLang] }]';document.jxcmd.jxcmd_url.value='[{ $aIncModule.link[$sIsoLang] }]';document.jxcmd.fnc.value='execute';document.jxcmd.submit();">
+                    [{ $aIncModule.title[$sIsoLang] }]
                     <div style="font-size:0.7em;white-space:normal;">
-                        [{ $aIncModule.desc[$IsoLang] }]
+                        [{ $aIncModule.desc[$sIsoLang] }]
                     </div>
                 </button>
                 </div>

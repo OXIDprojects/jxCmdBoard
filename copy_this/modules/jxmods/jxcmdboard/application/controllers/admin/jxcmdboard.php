@@ -29,16 +29,17 @@ class jxcmdboard extends oxAdminView
     public function render()
     {
         parent::render();
-        $oSmarty = oxUtilsView::getInstance()->getSmarty();
+        /*$oSmarty = oxUtilsView::getInstance()->getSmarty();
         $oSmarty->assign( "oViewConf", $this->_aViewData["oViewConf"]);
-        $oSmarty->assign( "shop", $this->_aViewData["shop"]);
+        $oSmarty->assign( "shop", $this->_aViewData["shop"]);*/
+        
         $myConfig = oxRegistry::get("oxConfig");
         $sLogsDir = $myConfig->getLogsDir();
         $sShopUrl = $myConfig->getShopUrl();
         $oModule = oxNew('oxModule');
-        $sModuleUrl = $sShopUrl . 'modules/' . $oModule->getModulePath("jxcmdboard") . '/';
+        $sModuleUrl = $sShopUrl . 'modules/' . $oModule->getModulePath('jxcmdboard') . '/';
         
-        $aIncFiles = $myConfig->getConfigParam("aJxCmdBoardIncludeFiles");
+        $aIncFiles = $myConfig->getConfigParam('aJxCmdBoardIncludeFiles');
         $aIncModules = array();
         $sIncPath = $this->jxGetModulePath() . '/application/controllers/admin/';
         foreach ($aIncFiles as $sIncFile) { 
@@ -46,11 +47,12 @@ class jxcmdboard extends oxAdminView
             require $sIncFile;
         } 
 
-        $oSmarty->assign("aIncModules",$aIncModules);
-        $oSmarty->assign("output",$this->output);
-        $oSmarty->assign("response",$this->response['http_code']);
-        $oSmarty->assign("exectime",$this->exectime);
-        $oSmarty->assign("exectitle",oxConfig::getParameter("jxcmd_title"));
+        $this->_aViewData["aIncModules"] = $aIncModules;
+        $this->_aViewData["output"] = $this->output;
+        $this->_aViewData["response"] = $this->response['http_code'];
+        $this->_aViewData["exectime"] = $this->exectime;
+        $this->_aViewData["exectitle"] = $this->getConfig()->getRequestParameter('jxcmd_title');
+        $this->_aViewData["sIsoLang"] = oxRegistry::getLang()->getLanguageAbbr($iLang);
 
         return $this->_sThisTemplate;
     }
@@ -58,7 +60,7 @@ class jxcmdboard extends oxAdminView
     
     public function execute()
     {
-        $url = oxConfig::getParameter( "jxcmd_url" );
+        $url = $this->getConfig()->getRequestParameter( "jxcmd_url" );
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE); 
