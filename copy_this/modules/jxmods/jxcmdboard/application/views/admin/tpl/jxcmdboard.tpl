@@ -1,4 +1,3 @@
-[{*debug*}]
 [{include file="headitem.tpl" title="GENERAL_ADMIN_TITLE"|oxmultilangassign box=" "}]
 
 
@@ -85,6 +84,10 @@
                     </div>
                 </button>
                 </div>
+                [{if $i % 4 == 0}]
+                    </div>
+                    <div class="row">
+                [{/if}]
                 [{assign var="i" value=$i+1}]
             [{/foreach}]
         </div>
