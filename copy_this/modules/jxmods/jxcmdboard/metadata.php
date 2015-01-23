@@ -16,7 +16,7 @@ $aModule = array(
                         'en'=>'Configurable Command Board'
                         ),
     'thumbnail'    => 'jxcmdboard.png',
-    'version'      => '0.3',
+    'version'      => '0.3.1',
     'author'       => 'Joachim Barthel',
     'url'          => 'https://github.com/job963/jxCmdBoard',
     'email'        => 'jobarthel@gmail.com',
