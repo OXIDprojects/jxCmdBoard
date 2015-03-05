@@ -23,15 +23,15 @@
  */
 
 /*
- *    This include file creates a tile for Marmalade's csvexporter guenstiger module
+ *    This include file creates a tile for running Proudcommerce's Sitemap Generator
  */
  
-array_push( $aIncModules, array("title"  => array('de' => 'Google Sitempa',
+array_push( $aIncModules, array("title"  => array('de' => 'Google Sitemap',
                                                   'en' => 'Google Sitemap'), 
                                 "button" => array('de' => 'Sitemap erzeugen',
                                                   'en' => 'Create Sitemap'),
-                                "desc"   => array('de' => 'Erzeugt eine XML-Datei für Google Sitemap.',
-                                                  'en' => 'Creates a XML file for Google Sitemap.'),
+                                "desc"   => array('de' => 'Erzeugt eine XML-Datei für Google Sitemaps (benötigt das Modul Google Sitemap von Proudcommerce).',
+                                                  'en' => 'Creates a XML file for Google Sitemaps (requires the module Google Sitemap from Proudcommerce).'),
                                 "link"   => array('de' => "{$sShopUrl}google_sitemap_xml.php",
                                                   'en' => "{$sShopUrl}google_sitemap_xml.php"),
                                 "target" => '_blank'
